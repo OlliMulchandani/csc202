@@ -139,17 +139,17 @@ class ExpressionTree:
                 # if char is ")"
                 elif char == ")": 
                     while stack and stack[-1] != "(":
-                        postfix += stack.pop()
+                        postfix += stack.pop() + ' '
                     stack.pop()
 
                 # if char is an operand
                 elif not self.IsOperator(char) and char != "(" and char != ")":
-                    postfix += char
+                    postfix += char + ' '
 
                 # char is an operator
                 else: 
                     while stack and stack[-1] != "(" and priority[char] <= priority[stack[-1]]:
-                        postfix += stack.pop()
+                        postfix += stack.pop() + ' '
                     stack.append(char)
 
             while stack:
