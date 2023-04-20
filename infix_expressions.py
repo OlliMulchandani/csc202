@@ -153,7 +153,7 @@ class ExpressionTree:
                     stack.append(char)
 
             while stack:
-                postfix += stack.pop()
+                postfix += stack.pop() + ' '
             return postfix
 
 '''
